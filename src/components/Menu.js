@@ -13,7 +13,7 @@ class Menu extends Component {
       
       <nav className="navbar navbar-expand-lg navbar-inverse bg-inverse">
         <div className="container">
-          <a className="navbar-brand" href="https://luxconnoisseurs.com/"><img src="assets/images/logo-light.png" alt="" /></a>
+          <a className="navbar-brand" href="https://luxconnoisseurs.com/"><img src="assets/images/lux-logo.png" alt="" /></a>
                     <div className="collapse navbar-collapse" id="navbar-toggle-nav-center">
                         <ul className="navbar-nav m-auto">
                             {/* <li className="nav-item">
