@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Identicon from 'identicon.js';
-import logo from '../logo.png';
+//import Identicon from 'identicon.js';
+//import logo from '../logo.png';
 //import Swap from './Swap';
 //import Main from './Main';
 
@@ -32,15 +32,6 @@ class Menu extends Component {
                         <ul className="navbar-nav px-3">
                             <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
                             <small className="text-white"><span id="account">{this.props.account}</span></small>
-                                  {/* {this.props.account
-                                  ? <img
-                                  className="ml-2"
-                                  width='10'
-                                  height='10'
-                                  src={`data:image/png;base64,${new Identicon(this.props.account, 10).toString()}`}
-                                  />
-                                : <span></span>
-                                } */}
                             </li>
                           </ul>
                     </div>

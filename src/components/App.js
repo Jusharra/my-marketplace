@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import Web3 from 'web3';
 //import logo from '../logo.png';
-import logo from '../eth-logo.png';
+//import logo from '../eth-logo.png';
 import './App.css';
 import Marketplace from '../abis/Marketplace.json'
 
