@@ -11,23 +11,26 @@ contract Marketplace {
         uint id;
         string name;
         uint price;
-        address payable owner; //this is what will transfer ownership pf product
+        address payable owner; //this is what will transfer ownership of product
         bool purchased;
+        //ipfs image upload
     }
 
     event ProductCreated(
         uint id,
         string name,
         uint price,
-        address payable owner, //this is what will transfer ownership pf product
+        address payable owner, //this is what will transfer ownership of product
         bool purchased
+        //ipfs image upload
     );
     event ProductPurchased(
         uint id,
         string name,
         uint price,
-        address payable owner, //this is what will transfer ownership pf product
+        address payable owner, //this is what will transfer ownership of product
         bool purchased
+        //ipfs image upload
     );
     constructor() public {
         name = "Lux Connoisseurs Marketplace";

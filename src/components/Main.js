@@ -1,11 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import ethlogo from '../eth-logo.png'
+//import AddAsset from './AddAsset'
+
+
 
 class Main extends Component {
 
     render() {
+
         return (
+          
           <div id="content">
-            <h1>Add Product</h1>
+
+            <div class="spacer-2x">&nbsp;</div>
+            
+            <h1>Add Asset</h1>
             <form onSubmit={(event) => {
               event.preventDefault()
               const name = this.productName.value
@@ -30,31 +39,59 @@ class Main extends Component {
                   placeholder="Product Price"
                   required />
               </div>
-              <button type="submit" className="btn btn-primary">Add Product</button>
+              <button type="submit" className="btn btn-primary-gradient">Add Asset</button>
             </form>
             <p>&nbsp;</p>
-            <h2>Buy Product</h2>
-            <table className="table">
-              <thead>
+            <h2>Purchase Assets</h2>
+            <div className="table-overflow">
+            <table className="table-xl border" >
+              <thead className="thead-light">
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Name</th>
                   <th scope="col">Price</th>
                   <th scope="col">Owner</th>
-                  <th scope="col"></th>
+                  <th className="text-center" scope="col"></th>
                 </tr>
               </thead>
               <tbody id="productList">
                 { this.props.products.map((product, key) => {
                   return(
-                    <tr key={key}>
+                    <tr className="bg-white" key={key}>
                       <th scope="row">{product.id.toString()}</th>
-                      <td>{product.name}</td>
-                      <td>{window.web3.utils.fromWei(product.price.toString(), 'Ether')} Eth</td>
-                      <td>{product.owner}</td>
+                      <td>
+                      <div class="list-media">
+                                        <div class="list-item">
+                                            <div class="media-img">
+                                                 <img src="assets/images/placeholder-square.jpg" alt="" />
+                                                 &nbsp;&nbsp;
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5>{product.name} &nbsp; </h5>
+                                </td>
+                      <td> {window.web3.utils.fromWei(product.price.toString(), 'Ether') } 
+                      <div className="input-group-append">
+                          <div className="input-group-text">
+                            <img src={ethlogo} height='32' alt=""/>
+                            &nbsp; ETH
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <h5>{product.owner}</h5>
+                      {/* <div class="list-media">
+                                        <div class="list-item">
+                                            <div class="media-img">
+                                                <img class="circle" src="assets/images/placeholder-square.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                    </div> */}
+                      </td>
                       <td>
                         { !product.purchased
                           ? <button
+                              className="btn btn-primary-gradient"
                               name={product.id}
                               value={product.price}
                               onClick={(event) => {
@@ -71,9 +108,13 @@ class Main extends Component {
                 })}
               </tbody>
             </table>
+            </div>
           </div>
         );
       }
     }
     
     export default Main;
+
+    // {product.img} this will add the product image to the end users product
+    // {logo} this will be the logo for ETH coin image

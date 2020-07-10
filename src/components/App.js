@@ -1,10 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import Web3 from 'web3';
-import logo from '../logo.png';
+//import logo from '../logo.png';
+import logo from '../eth-logo.png';
 import './App.css';
 import Marketplace from '../abis/Marketplace.json'
-import Navbar from './Navbar'
+
+
+
+import Menu from './Menu' //Navbar old
 import Main from './Main'
+
+//import Header from './Header';
+//import Footer from './Footer';
+
+
+//import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 class App extends Component {
 
@@ -82,24 +92,32 @@ class App extends Component {
 
   render() {
     return (
+      
       <div>
-        <Navbar account={this.state.account} />
-        <div className="container-fluid mt-5">
-          <div className="row">
-            <main role="main" className="col-lg-12 d-flex">
+        
+        <Menu account={this.state.account} />
+        
+        <div className="container">
+          <div className="row v-center">
+            <main role="main" className="col-lg-12 ml-auto mr-auto" style={{ maxWidth: '1000px' }}>
               { this.state.loading
-                ? <div id="loader" className="text-center"><p className="text-center">Loading...</p></div>
+                ? <div id="preloader" className="preloader"><p className="text-center">Loading...</p></div>
                 : <Main
                   products={this.state.products}
                   createProduct={this.createProduct}
                   purchaseProduct={this.purchaseProduct} />
               }
+              
             </main>
+            
           </div>
         </div>
+        
       </div>
     );
   }
 }
 
 export default App;
+
+//<AddAsset />
